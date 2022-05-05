@@ -31,7 +31,7 @@ public class ReaderApplication {
 					"London",
 					"NE9"
 			);
-			String email = "jahmed@gmail.com";
+			String email = "rios@gmail.com";
 			Student student = new Student(
 					"Jamila",
 					"Ahmed",

@@ -1,5 +1,6 @@
 package com.vieira.sogolon.reader.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.vieira.sogolon.reader.enums.Gender;
 import lombok.Data;
 import org.springframework.data.annotation.Id;
@@ -11,8 +12,10 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Data
+@JsonIgnoreProperties(ignoreUnknown = true)
 @Document
 public class Student {
+
     @Id
     private String id;
     private String firstName;
