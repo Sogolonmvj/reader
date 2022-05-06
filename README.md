@@ -6,7 +6,7 @@ This project was created to practice CQRS implementation. It uses Kafka as a mes
 
 ## Endpoints documentation
 
-### API (Reader)
+### API (Reader) <https://github.com/Sogolonmvj/reader.git>
 
 > Base Url: <http://localhost:8080/api/v1>
 
@@ -51,7 +51,7 @@ Example of the data retrieved after an email query was done. The email searched 
     }
 ```
 
-### Producer (Kafka-producer)
+### Producer (Kafka-producer) <https://github.com/Sogolonmvj/kafka-producer.git>
 
 > Base Url: http://localhost:8081/producer/v1
 
@@ -86,7 +86,7 @@ Example of the data sent by producer:
     }
 ```
 
-### Consumer (Kafka-consumer)
+### Consumer (Kafka-consumer) <https://github.com/Sogolonmvj/kafka-consumer.git>
 
 > No endpoints are present for this application
 
