@@ -23,5 +23,4 @@ public class Student {
     private List<String> favouriteSubjects;
     private BigDecimal totalSpentInBooks;
     private LocalDateTime created;
-
 }

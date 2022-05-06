@@ -18,7 +18,5 @@ public class StudentService {
         return studentRepository.findAll();
     }
 
-    public Optional<Student> getStudent(String email) {
-        return studentRepository.findStudentByEmail(email);
-    }
+    public Optional<Student> getStudent(String email) { return studentRepository.findStudentByEmail(email); }
 }

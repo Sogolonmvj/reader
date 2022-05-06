@@ -29,5 +29,6 @@ public class StudentController {
         Optional<Student> studentEmail = studentService.getStudent(email);
 
         return ResponseEntity.ok(studentEmail);
+
     }
 }
