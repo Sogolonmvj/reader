@@ -4,8 +4,12 @@ services:
 
   reader:
     image: sogo/reader
+    container_name: reader
     ports:
       - "8080:8080"
+    restart: always
+    links:
+      - mongodb
     depends_on:
       - mongodb
 
@@ -16,16 +20,16 @@ services:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: NkYVaAoS46Mm13sE
     ports:
-      - 27017:27017
+      - "27017:27017"
     volumes:
-      - ./data/db
+      - ./database-data:/data/db
     restart: always
 
   mongo-express:
     image: mongo-express:latest
     container_name: mongo_express
     ports:
-      - 8085:8081
+      - "8085:8081"
     environment:
       ME_CONFIG_BASICAUTH_USERNAME: sogo
       ME_CONFIG_BASICAUTH_PASSWORD: sogo29
