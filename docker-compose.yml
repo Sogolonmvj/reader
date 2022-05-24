@@ -12,6 +12,8 @@ services:
       - mongodb
     depends_on:
       - mongodb
+    networks:
+      - host
 
   mongodb:
     image: mongo:latest
@@ -24,6 +26,8 @@ services:
     volumes:
       - ./database-data:/data/db
     restart: always
+    networks:
+      - host
 
   mongo-express:
     image: mongo-express:latest
@@ -37,5 +41,37 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: NkYVaAoS46Mm13sE
       ME_CONFIG_MONGODB_SERVER: mongodb
     restart: always
+    networks:
+      - host
+
+  prometheus:
+    image: prom/prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./Prometheus:/etc/prometheus
+    networks:
+      - host
+    links:
+      - reader
+    depends_on:
+      - reader
+
+  grafana:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    environment:
+      GF_SERVER_PROTOCOL: http
+      GF_SERVER_HTTP: 3000
+    networks:
+      - host
+    links:
+      - prometheus
+    depends_on:
+      - prometheus
+
+networks:
+  host:
 
 
